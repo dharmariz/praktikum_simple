@@ -22,4 +22,15 @@ pipeline {
       }
     }
   }
+  post {
+    success {
+      echo 'Yey! Build dan Push ke Docker Hub berhasil total!'
+    }
+    failure {
+      echo 'Waduh, ada error di salah satu stage. Cek log di atas ya!'
+    }
+    always {
+      echo 'Pipeline selesai dieksekusi.'
+    }
+  }
 }
